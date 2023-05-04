@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import AddTask from "./components/Task/AddTask";
+import CardMsg from "./components/Task/CardMsg";
+import CardTask from "./components/Task/CardTask";
+import ToDoListContext from "./components/context/ToDoListContext";
+
 
 function App() {
+
+  const { initialState } = useContext(ToDoListContext)
+  console.log(initialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AddTask />
+      <CardTask />
+      <CardMsg />
+    </>
   );
 }
 
