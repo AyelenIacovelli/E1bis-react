@@ -9,6 +9,10 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         background: black;
         color: white;
-        overflow-x: hidden;   
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
     }
 `;
