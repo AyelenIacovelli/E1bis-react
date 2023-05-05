@@ -1,13 +1,11 @@
 import React from 'react'
 import { Message, MsgContainer } from './CardMsgStyles'
 
-const CardMsg = () => {
+const CardMsg = ({message}) => {
     return (
-        <>
             <MsgContainer>
-                <Message>Mensaje aqui</Message>
+                <Message>{message}</Message>
             </MsgContainer>
-        </>
     )
 }
 

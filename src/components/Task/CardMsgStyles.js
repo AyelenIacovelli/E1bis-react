@@ -5,5 +5,6 @@ export const MsgContainer = styled.div`
 `
 
 export const Message = styled.p`
-    font-size: 12px;
+    font-size: 15px;
+    color: yellow;
 `
