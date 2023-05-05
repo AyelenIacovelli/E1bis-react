@@ -1,14 +1,11 @@
 import React, { useReducer } from 'react'
 import ToDoListContext from './ToDoListContext'
 import reducer from './ToDoListReducer';
-import { ADD_TASK, DELETE_TASK } from '../../actionTypes/actions';
+import { ADD_TASK, DELETE_ALL, DELETE_TASK } from '../../actionTypes/actions';
 
 const ToDoListState = ({ children }) => {
 
-    const initialState = [{
-        id: new Date().getTime(),
-        name: "Entregar trabajo",
-    }]
+    const initialState = []
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -19,15 +16,22 @@ const ToDoListState = ({ children }) => {
         })
     }
 
-    const handleDelete  = (idTask) => {
+    const handleDelete = (idTask) => {
         dispatch({
             type: DELETE_TASK,
             payload: idTask
         })
     }
 
+    const handleDeleteAll = (idTask) => {
+        dispatch({
+            type: DELETE_ALL,
+            payload: idTask
+        })
+    }
+
     return (
-        <ToDoListContext.Provider value={{ data: state, handleAdd, handleDelete }}>
+        <ToDoListContext.Provider value={{ data: state, handleAdd, handleDelete, handleDeleteAll }}>
             {children}
         </ToDoListContext.Provider>
     )
