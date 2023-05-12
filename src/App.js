@@ -4,6 +4,10 @@ import ToDoListContext from "./components/context/ToDoListContext";
 import ButtonAll from "./components/button/ButtonAll";
 import { Container } from "./components/Wrapper/GeneralWrapperStyles";
 import List from "./components/Task/List";
+import Routes from "./routes/Routes";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+
 
 
 
@@ -15,6 +19,7 @@ function App() {
   return (
     <>
       <Container>
+        <Navbar />
         <AddTask handleAdd={handleAdd} />
         <List />
         <ButtonAll handleDeleteAll={handleDeleteAll}></ButtonAll>
